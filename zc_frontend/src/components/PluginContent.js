@@ -18,7 +18,7 @@ export const PluginContent = () => {
           const link = document.createElement('link')
           link.setAttribute('rel', 'stylesheet')
           link.setAttribute('href', element.href)
-          document.head.appendChild(link)
+          document.head.prepend(link)
         }
       )
 

@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 .container {
   background-color: #ffffff;
-  width: 16.8125em;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow: auto;
+  width: max-content;
 }
 
 .zuriLogo {
@@ -197,6 +198,7 @@
   margin-right: 0.5em;
 }
 
-.channelItem{
+.channelItem {
   cursor: pointer;
+  padding: 0.4rem 0;
 }

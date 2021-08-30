@@ -1,6 +1,18 @@
 const express = require('express')
 const APIRouter = express.Router()
 
+// /GET get all plugins
+APIRouter.get('/plugins', (_, res) => {
+  return res.send({
+    'chess.zuri.chat': {
+      name: 'Chess Board Room',
+    },
+    'whiteboard.zuri.chat': {
+      name: 'Whiteboard Room',
+    },
+  })
+})
+
 APIRouter.get('/plugins/:name', (req, res) => {
   const { name } = req.params
 

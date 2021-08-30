@@ -1,23 +1,31 @@
-import { PluginContent } from './components/PluginContent'
-import { Sidebar } from './components/Sidebar'
-import { Topbar } from './components/Topbar'
-import styles from './styles/Home.module.css'
-import { UrlProvider } from './contexts/Url'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Home from './pages/home'
+import Login from './pages/login'
+import SignUp from './pages/signup'
+import Blog from './pages/blog'
+import News from './pages/news'
+import './styles/globals.css'
 
-function App() {
-  return (
-    <UrlProvider>
-      <div className={styles.container}>
-        <Sidebar />
-        <div className={styles.room}>
-          <Topbar />
-          <div className={styles.pluginContent}>
-            <PluginContent />
-          </div>
-        </div>
-      </div>
-    </UrlProvider>
-  )
-}
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route path="/" exact>
+        <Home />
+      </Route>
+      <Route path="/login">
+        <Login />
+      </Route>
+      <Route path="/signup">
+        <SignUp />
+      </Route>
+      <Route path="/blog">
+        <Blog />
+      </Route>
+      <Route path="/news">
+        <News />
+      </Route>
+    </Switch>
+  </BrowserRouter>
+)
 
 export default App
